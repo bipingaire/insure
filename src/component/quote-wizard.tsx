@@ -151,7 +151,7 @@ const QuoteWizard = () => {
                         <option>3-5 Years</option>
                         <option>5+ Years (Pro)</option>
                       </select>
-                      <ChevronDown className="absolute right-4 top-5 text-slate-400 pointer-events-none" size={20} />
+                      {/* <ChevronDown className="absolute right-4 top-5 text-slate-400 pointer-events-none" size={20} /> */}
                     </div>
                   </div>
                   <label className="flex items-center gap-4 p-4 border-2 border-slate-200 rounded-xl cursor-pointer hover:border-blue-300 transition-colors bg-slate-50">
@@ -328,7 +328,7 @@ const QuoteWizard = () => {
                 type="button"
                 onClick={handleBack}
                 disabled={step === 1}
-                className="w-1/3 text-blue-700 font-bold text-lg py-4 rounded-xl shadow-lg transform transition active:scale-95 bg-white border border-slate-200 hover:bg-slate-50 disabled:opacity-50"
+                className="px-6 text-blue-700 font-bold text-lg py-2 rounded-xl shadow-lg transform transition active:scale-95 bg-white border border-slate-200 hover:bg-slate-50 disabled:opacity-50"
               >
                 Back
               </button>
@@ -336,7 +336,7 @@ const QuoteWizard = () => {
                 <button
                   type="button"
                   onClick={handleNext}
-                  className="w-2/3 text-white font-bold text-lg py-4 rounded-xl shadow-lg bg-blue-600 hover:bg-blue-500 shadow-blue-600/30 transform transition active:scale-95"
+                  className="px-6 text-white font-bold text-lg py-2 rounded-xl shadow-lg bg-blue-600 hover:bg-blue-500 shadow-blue-600/30 transform transition active:scale-95"
                 >
                   Next
                 </button>
@@ -344,13 +344,13 @@ const QuoteWizard = () => {
                 <button
                   type="submit"
                   disabled={state.submitting}
-                  className="w-2/3 text-white font-bold text-lg py-4 rounded-xl shadow-lg bg-green-500 hover:bg-green-400 shadow-green-500/30 transform transition active:scale-95"
+                  className="px-6 text-white font-bold text-lg py-2 rounded-xl shadow-lg bg-green-500 hover:bg-green-400 shadow-green-500/30 transform transition active:scale-95"
                 >
                   {state.submitting ? 'Saving...' : 'Unlock Quote'}
                 </button>
               )}
             </div>
-            <p className="text-center text-xs text-slate-400 mt-4 font-medium flex items-center justify-center gap-2">
+            <p className="text-center text-xs text-slate-400 mt-6 font-medium flex items-center justify-center gap-2">
               <ShieldCheck size={12} className="text-green-500" /> 256-bit Secure Encryption
             </p>
           </div>
