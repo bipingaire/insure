@@ -1,0 +1,5 @@
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Super Truck logo">
+  <rect width="256" height="256" fill="#22B573"/>
+  <path fill="#fff" d="M56 94c0-3.3 2.7-6 6-6h68c17.3 0 33 8.2 43 22.6l8.9 12.4c1.7 2.4.1 5.7-2.9 5.7H122c-2.2 0-4-1.8-4-4V110H74v28h120c3.3 0 6 2.7 6 6v44c0 3.3-2.7 6-6 6H62c-3.3 0-6-2.7-6-6V94Z"/>
+  <rect x="70" y="168" width="116" height="20" rx="6" fill="#fff"/>
+</svg>

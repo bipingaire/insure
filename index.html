@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperTruck.ai | Instant AI Trucking Insurance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Custom Animations for Gamification */
+        .fade-in { animation: fadeIn 0.4s ease-in-out forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .progress-transition { transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+        
+        /* Mobile First Typography */
+        body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+
+        /* Custom gradient text */
+        .gradient-text { background: linear-gradient(to right, #1e40af, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 relative">
+
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-4">
+        <a href="tel:+18005550199" class="w-14 h-14 flex items-center justify-center rounded-full bg-white text-blue-900 shadow-lg hover:scale-110 transition-transform border-2 border-blue-100">
+            <i class="fas fa-phone-alt text-xl"></i>
+            <span class="sr-only">Call Us</span>
+        </a>
+        <button class="w-14 h-14 flex items-center justify-center rounded-full bg-green-500 text-white shadow-lg hover:scale-110 transition-transform hover:bg-green-400">
+            <i class="fas fa-comment-dots text-2xl"></i>
+            <span class="sr-only">Live Chat</span>
+        </button>
+    </div>
+
+    <nav class="flex justify-between items-center p-4 bg-white/95 backdrop-blur-sm shadow-sm sticky top-0 z-40">
+        <div class="flex items-center gap-2">
+            <div class="w-9 h-9 bg-blue-900 rounded-xl flex items-center justify-center text-green-400 font-bold text-lg shadow-sm">ST</div>
+            <span class="font-extrabold text-xl tracking-tight text-blue-900">insure<span class="text-green-500">.ai</span></span>
+        </div>
+        <div class="flex items-center gap-4">
+            <a href="tel:18005550199" class="hidden md:flex items-center gap-2 font-semibold text-blue-900"><i class="fas fa-phone-alt text-sm"></i> 1-800-555-0199</a>
+            <button class="text-sm font-bold text-blue-900 bg-blue-50 px-4 py-2 rounded-lg hover:bg-blue-100 transition">Log In</button>
+        </div>
+    </nav>
+
+    <section class="relative pt-12 pb-20 md:pt-24 md:pb-32 overflow-hidden bg-white">
+        <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+            <div class="text-center md:text-left relative z-10">
+                <div class="inline-flex items-center gap-2 px-3 py-1 mb-6 bg-green-100 text-green-700 rounded-full text-xs font-bold uppercase tracking-wide shadow-sm">
+                    <i class="fas fa-bolt"></i> AI-Powered Savings Engine
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 mb-6 leading-tight tracking-tight">
+                    Haul Smarter. <br>
+                    <span class="gradient-text">Insure Faster.</span>
+                </h1>
+                <p class="text-slate-500 mb-8 text-lg md:text-xl max-w-lg mx-auto md:mx-0 leading-relaxed">
+                    Stop overpaying for generic coverage. Our AI analyzes your specific lanes and loads to unlock instant savings tailored to your rig.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <button onclick="scrollToQuote()" class="bg-green-500 hover:bg-green-400 text-white font-bold text-lg px-8 py-4 rounded-xl shadow-lg shadow-green-500/30 transform transition hover:-translate-y-1 active:scale-95 flex items-center justify-center gap-3">
+                        Unlock the best price 
+                        <i class="fas fa-arrow-down animate-bounce"></i>
+                    </button>
+                </div>
+
+                 <div class="flex justify-center md:justify-start items-center gap-4 text-slate-500 text-sm mt-8 font-medium">
+                    <div class="flex text-yellow-400"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                    <span>4.9/5 Rating from 10k+ Truckers</span>
+                </div>
+            </div>
+            
+            <div class="relative hidden md:block">
+                <div class="absolute top-0 right-0 -z-10 w-[500px] h-[500px] bg-blue-50 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
+                <div class="absolute bottom-0 left-0 -z-10 w-[500px] h-[500px] bg-green-50 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
+                
+                <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=1000&auto=format&fit=crop" alt="Modern semi-truck on highway" class="rounded-3xl shadow-2xl transform rotate-2 hover:rotate-0 transition duration-500 object-cover h-[500px] w-full z-20 relative border-4 border-white">
+            </div>
+        </div>
+    </section>
+
+    <section id="quote-quest-section" class="px-4 py-16 bg-slate-50 relative">
+        
+        <div class="text-center mb-12">
+             <h2 class="font-bold text-2xl md:text-3xl mb-3">Start Your Quote Quest</h2>
+             <p class="text-slate-500">Complete 5 quick levels to unlock your AI-optimized rate.</p>
+        </div>
+
+        <div class="bg-white rounded-3xl shadow-xl max-w-md mx-auto border border-slate-100 overflow-hidden relative z-20">
+            
+            <div class="bg-blue-900 p-5 text-white relative overflow-hidden">
+                <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width=\'20\' height=\'20\' viewBox=\'0 0 20 20\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\' fill-rule=\'evenodd\'%3E%3Ccircle cx=\'3\' cy=\'3\' r=\'3\'/%3E%3Ccircle cx=\'13\' cy=\'13\' r=\'3\'/%3E%3C/g%3E%3C/svg%3E');"></div>
+
+                <div class="flex justify-between items-end mb-3 relative z-10">
+                    <span class="text-xs font-bold uppercase text-green-400 tracking-wider flex items-center gap-1"><i class="fas fa-gamepad"></i> Rate Simulator</span>
+                    <span class="text-xl font-extrabold tracking-tight" id="level-indicator">Level 1 <span class="text-blue-300 text-base font-medium">/ 5</span></span>
+                </div>
+                <div class="w-full bg-blue-950/50 h-3 rounded-full relative z-10 backdrop-blur-md overflow-hidden">
+                    <div id="progress-bar" class="bg-gradient-to-r from-green-400 to-green-500 h-3 rounded-full progress-transition shadow-[0_0_10px_rgba(74,222,128,0.5)]" style="width: 20%"></div>
+                </div>
+            </div>
+
+            <form id="quote-form" class="p-6 md:p-8 min-h-[420px] flex flex-col justify-between relative">
+                
+                <div id="step-1" class="fade-in block relative">
+                    <span class="absolute -top-2 -left-2 text-6xl font-black text-slate-100 -z-10 select-none">01</span>
+                    <h3 class="text-xl font-bold mb-2 text-blue-900">Identify Your Carrier</h3>
+                    <p class="text-sm text-slate-500 mb-6 font-medium">Let's pull up your authority data.</p>
+                    
+                    <div class="space-y-5">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase mb-2 ml-1">Company Name</label>
+                            <div class="relative">
+                                <i class="fas fa-building absolute left-4 top-4 text-slate-400"></i>
+                                <input type="text" placeholder="Super Trucking LLC" class="w-full pl-12 pr-4 py-3.5 border-2 border-slate-200 rounded-xl focus:ring-4 focus:ring-blue-100 focus:border-blue-600 outline-none text-lg font-medium transition-all">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase mb-2 ml-1">DOT Number</label>
+                            <div class="relative">
+                                <i class="fas fa-hashtag absolute left-4 top-4 text-slate-400"></i>
+                                <input type="number" placeholder="1234567" class="w-full pl-12 pr-4 py-3.5 border-2 border-slate-200 rounded-xl focus:ring-4 focus:ring-blue-100 focus:border-blue-600 outline-none text-lg font-medium transition-all">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="step-2" class="fade-in hidden relative">
+                    <span class="absolute -top-2 -left-2 text-6xl font-black text-slate-100 -z-10 select-none">02</span>
+                    <h3 class="text-xl font-bold mb-2 text-blue-900">Driver Profile</h3>
+                    <p class="text-sm text-slate-500 mb-6 font-medium">Experience unlocks better rates.</p>
+                    
+                    <div class="space-y-5">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase mb-2 ml-1">Years of CDL Experience</label>
+                            <div class="relative">
+                                <i class="fas fa-id-card absolute left-4 top-4 text-slate-400 z-10"></i>
+                                <select class="w-full pl-12 pr-10 py-3.5 border-2 border-slate-200 rounded-xl focus:ring-4 focus:ring-blue-100 focus:border-blue-600 outline-none text-lg font-medium bg-white appearance-none transition-all">
+                                    <option>Less than 1 year</option>
+                                    <option>1-3 Years</option>
+                                    <option selected>3-5 Years</option>
+                                    <option>5+ Years (Pro)</option>
+                                </select>
+                                <i class="fas fa-chevron-down absolute right-4 top-4 text-slate-400 pointer-events-none"></i>
+                            </div>
+                        </div>
+                        <label class="flex items-center gap-4 p-4 border-2 border-slate-200 rounded-xl cursor-pointer hover:border-blue-300 transition-colors group bg-slate-50">
+                            <input type="checkbox" id="violations" class="w-6 h-6 text-green-500 rounded-md focus:ring-green-400 border-slate-300">
+                            <span class="text-sm font-bold text-slate-700 group-hover:text-blue-900">I have a clean driving record <span class="block text-xs font-normal text-slate-500">(Last 3 years)</span></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div id="step-3" class="fade-in hidden relative">
+                    <span class="absolute -top-2 -left-2 text-6xl font-black text-slate-100 -z-10 select-none">03</span>
+                    <h3 class="text-xl font-bold mb-2 text-blue-900">The Rig</h3>
+                    <p class="text-sm text-slate-500 mb-6 font-medium">What are we insuring today?</p>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase mb-2 ml-1">Vehicle Type</label>
+                            <div class="grid grid-cols-2 gap-3">
+                                <button type="button" class="p-4 border-2 border-blue-600 bg-blue-50 text-blue-800 rounded-xl font-bold text-sm flex flex-col items-center gap-2 shadow-sm">
+                                    <i class="fas fa-truck-moving text-2xl"></i>
+                                    Semi-Truck
+                                </button>
+                                <button type="button" class="p-4 border-2 border-slate-200 text-slate-600 rounded-xl font-bold text-sm flex flex-col items-center gap-2 hover:bg-slate-50 transition-colors">
+                                    <i class="fas fa-truck text-2xl opacity-50"></i>
+                                    Box Truck
+                                </button>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase mb-2 ml-1">VIN (Optional for Quote)</label>
+                             <div class="relative">
+                                <i class="fas fa-barcode absolute left-4 top-4 text-slate-400"></i>
+                                <input type="text" placeholder="Enter VIN or Skip" class="w-full pl-12 pr-4 py-3.5 border-2 border-slate-200 rounded-xl focus:ring-4 focus:ring-blue-100 focus:border-blue-600 outline-none text-lg font-medium transition-all">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="step-4" class="fade-in hidden relative">
+                    <span class="absolute -top-2 -left-2 text-6xl font-black text-slate-100 -z-10 select-none">04</span>
+                    <h3 class="text-xl font-bold mb-2 text-blue-900">Operations</h3>
+                    <p class="text-sm text-slate-500 mb-6 font-medium">Where do you run and what do you haul?</p>
+                    
+                    <div class="space-y-5">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase mb-2 ml-1">Primary Region</label>
+                            <div class="relative">
+                                <i class="fas fa-map-marked-alt absolute left-4 top-4 text-slate-400 z-10"></i>
+                                <select class="w-full pl-12 pr-10 py-3.5 border-2 border-slate-200 rounded-xl focus:ring-4 focus:ring-blue-100 focus:border-blue-600 outline-none text-lg font-medium bg-white appearance-none transition-all">
+                                    <option selected>Over the Road (OTR - 48 States)</option>
+                                    <option>Regional (Southwest)</option>
+                                    <option>Regional (Northeast)</option>
+                                    <option>Regional (Midwest)</option>
+                                    <option>Local (< 300 miles)</option>
+                                </select>
+                                <i class="fas fa-chevron-down absolute right-4 top-4 text-slate-400 pointer-events-none"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase mb-2 ml-1">Cargo Type</label>
+                            <div class="relative">
+                                <i class="fas fa-boxes absolute left-4 top-4 text-slate-400"></i>
+                                <input type="text" placeholder="e.g. Dry Van, Reefer, Flatbed" class="w-full pl-12 pr-4 py-3.5 border-2 border-slate-200 rounded-xl focus:ring-4 focus:ring-blue-100 focus:border-blue-600 outline-none text-lg font-medium transition-all">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="step-5" class="fade-in hidden relative">
+                    <span class="absolute -top-2 -left-2 text-6xl font-black text-slate-100 -z-10 select-none">05</span>
+                    <h3 class="text-xl font-bold mb-2 text-blue-900">Loss History</h3>
+                    <p class="text-sm text-slate-500 mb-6 font-medium">Last step to unlock your AI Rate.</p>
+                    
+                    <div class="border-3 border-dashed border-blue-200 rounded-2xl p-6 text-center bg-blue-50/50 mb-6 hover:bg-blue-50 transition-colors cursor-pointer group">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-cloud-upload-alt text-3xl text-blue-500"></i>
+                        </div>
+                        <p class="text-base font-bold text-blue-900">Upload Loss Run Report</p>
+                        <p class="text-xs text-slate-500 font-medium">(PDF or Image formats)</p>
+                    </div>
+                    
+                    <div class="relative flex py-2 items-center">
+                        <div class="flex-grow border-t border-slate-200"></div>
+                        <span class="flex-shrink mx-4 text-xs font-bold text-slate-400 uppercase bg-white px-2">OR QUICK SKIP</span>
+                        <div class="flex-grow border-t border-slate-200"></div>
+                    </div>
+
+                    <label class="flex items-center gap-4 p-4 border-2 border-green-200 rounded-xl bg-green-50/50 cursor-pointer hover:bg-green-100 transition-colors mt-4">
+                        <input type="checkbox" checked class="w-6 h-6 text-green-600 rounded-md focus:ring-green-500 border-green-300">
+                        <div>
+                            <span class="text-sm font-bold text-green-900">I have had NO losses in past 3 years.</span>
+                            <span class="block text-xs font-bold text-green-600 uppercase tracking-wider mt-1">+500 XP Bonus applied</span>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="mt-8 pt-6 border-t border-slate-100">
+                    <button type="button" onclick="nextStep()" id="next-btn" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-lg py-4 rounded-xl shadow-lg shadow-blue-600/30 transform transition active:scale-95 flex justify-center items-center gap-3 relative overflow-hidden group">
+                        <span class="relative z-10">Continue to Level 2</span>
+                        <i class="fas fa-arrow-right relative z-10 group-hover:translate-x-1 transition-transform"></i>
+                        <div class="absolute inset-0 h-full w-full scale-0 rounded-xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/10 z-0"></div>
+                    </button>
+                    <p class="text-center text-xs text-slate-400 mt-4 font-medium flex items-center justify-center gap-2">
+                        <i class="fas fa-shield-alt text-green-500"></i> 256-bit Bank-Level AES Encryption
+                    </p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 text-slate-400 py-12 px-4 text-center text-sm">
+        <div class="mb-6">
+             <span class="font-extrabold text-2xl tracking-tight text-white">insure<span class="text-green-500">.ai</span></span>
+        </div>
+        <p class="mb-6 max-w-sm mx-auto leading-relaxed">AI-optimized insurance for the modern trucking industry. Haul more, pay less.</p>
+        <div class="flex justify-center gap-6 font-medium mb-8">
+            <a href="#" class="hover:text-white transition-colors">Terms</a>
+            <a href="#" class="hover:text-white transition-colors">Privacy</a>
+            <a href="#" class="hover:text-white transition-colors">Support</a>
+        </div>
+        <p class="text-slate-600">&copy; 2024 SuperTruck.ai Insurance Services. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth Scroll Function for Hero Button
+        function scrollToQuote() {
+            const quoteSection = document.getElementById('quote-quest-section');
+            // Offset the scroll slightly so the header isn't right at the top of the viewport
+            const yOffset = -80; 
+            const y = quoteSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+            window.scrollTo({top: y, behavior: 'smooth'});
+        }
+
+        // Form Logic
+        let currentStep = 1;
+        const totalSteps = 5;
+
+        function nextStep() {
+            // 1. Hide current step visually
+            document.getElementById(`step-${currentStep}`).classList.remove('fade-in');
+            document.getElementById(`step-${currentStep}`).classList.add('hidden');
+            
+            // 2. Increment Step Counter
+            currentStep++;
+            
+            // 3. Check for completion condition
+            if(currentStep > totalSteps) {
+                // Demo Submission Simulation
+                const btn = document.getElementById('next-btn');
+                btn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> Calculating AI Rate...';
+                btn.disabled = true;
+                
+                setTimeout(() => {
+                    alert("SUCCESS! Based on your inputs, your estimated AI Rate is $8,500 - $10,200 / year. Check your email to bind.");
+                    // Reset for demo purposes
+                    resetForm();
+                }, 2000);
+                return;
+            }
+
+            // 4. Show next step visually
+            document.getElementById(`step-${currentStep}`).classList.remove('hidden');
+            // Force reflow to trigger animation
+            void document.getElementById(`step-${currentStep}`).offsetWidth;
+            document.getElementById(`step-${currentStep}`).classList.add('fade-in');
+            
+            // 5. Update UI Elements (Progress bar, Text)
+            updateUI();
+        }
+
+        function resetForm() {
+             currentStep = 1;
+             for(let i=2; i<=totalSteps; i++) {
+                 document.getElementById(`step-${i}`).classList.add('hidden');
+                 document.getElementById(`step-${i}`).classList.remove('fade-in');
+             }
+             document.getElementById('step-1').classList.remove('hidden');
+             document.getElementById('step-1').classList.add('fade-in');
+             const btn = document.getElementById('next-btn');
+             btn.disabled = false;
+             updateUI();
+        }
+
+        function updateUI() {
+            // Update Level Text Indicator
+            document.getElementById('level-indicator').innerHTML = `Level ${currentStep} <span class="text-blue-300 text-base font-medium">/ ${totalSteps}</span>`;
+            
+            // Update Progress Bar Width based on percentage
+            const percentage = (currentStep / totalSteps) * 100;
+            document.getElementById('progress-bar').style.width = `${percentage}%`;
+
+            // Change Button Text dynamically based on the step
+            const btnSpan = document.querySelector('#next-btn span');
+            if(currentStep === totalSteps) {
+                btnSpan.innerText = "Unlock Final Rate Now";
+                document.getElementById('next-btn').classList.remove('bg-blue-600', 'hover:bg-blue-500', 'shadow-blue-600/30');
+                document.getElementById('next-btn').classList.add('bg-green-500', 'hover:bg-green-400', 'shadow-green-500/30');
+            } else {
+                btnSpan.innerText = `Continue to Level ${currentStep + 1}`;
+                // Ensure blue colors are back if resetting form
+                 document.getElementById('next-btn').classList.add('bg-blue-600', 'hover:bg-blue-500', 'shadow-blue-600/30');
+                document.getElementById('next-btn').classList.remove('bg-green-500', 'hover:bg-green-400', 'shadow-green-500/30');
+            }
+        }
+    </script>
+    
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              animation: {
+                blob: "blob 7s infinite",
+              },
+              keyframes: {
+                blob: {
+                  "0%": {
+                    transform: "translate(0px, 0px) scale(1)",
+                  },
+                  "33%": {
+                    transform: "translate(30px, -50px) scale(1.1)",
+                  },
+                  "66%": {
+                    transform: "translate(-20px, 20px) scale(0.9)",
+                  },
+                  "100%": {
+                    transform: "translate(0px, 0px) scale(1)",
+                  },
+                },
+              },
+            },
+          },
+        }
+      </script>
+</body>
+</html>
